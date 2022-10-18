@@ -1,0 +1,59 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.33.31630.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/usher/source/repos/myinjecter/pch.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "9b0c294ad401bc838e56a703d6133c69c53e9dd9d0698c9a7656ab178e3cae48"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/usher/source/repos/myinjecter/pch.h"
+          },
+          "hashes": {
+            "sha-256": "b47e055c299d484e09e0f356e40b2b71e5922e1ec56a864e9f03f65d5cd70e70"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/usher/source/repos/myinjecter/framework.h"
+          },
+          "hashes": {
+            "sha-256": "0dec0835393a3d579a7400dd6d6acb6b58c1eb2a20f9599d7c82503f21bb3726"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/usher/source/repos/myinjecter/targetver.h"
+          },
+          "hashes": {
+            "sha-256": "04eb68099e73039a3c12bbcf075f6f6b649ec420da4e4593b6c5e6b03d138769"
+          }
+        }
+      ]
+    }
+  ]
+}

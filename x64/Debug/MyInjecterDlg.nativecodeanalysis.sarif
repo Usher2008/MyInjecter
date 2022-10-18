@@ -1,0 +1,1265 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"hProcessSanp\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                },
+                "region": {
+                  "startLine": 136,
+                  "startColumn": 5,
+                  "endLine": 136,
+                  "endColumn": 17
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "CMyInjecterDlg::OnBnClickedButton1",
+                  "decoratedName": "?OnBnClickedButton1@CMyInjecterDlg@@QEAAXXZ",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 105,
+                            "startColumn": 26
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 107,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 109,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 110,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 111,
+                            "startColumn": 22
+                          }
+                        },
+                        "message": {
+                          "text": "“hProcessSanp”可能等于 -1 (进入此分支)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 113,
+                            "startColumn": 19
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 117,
+                            "startColumn": 10
+                          }
+                        },
+                        "message": {
+                          "text": "“hProcessSanp”是“Process32FirstW”的输入/输出参数(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\um\\tlhelp32.h:160 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 118,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 119,
+                            "startColumn": 12
+                          }
+                        },
+                        "message": {
+                          "text": "跳过此循环(假定“bMore”为 false)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 136,
+                            "startColumn": 16
+                          }
+                        },
+                        "message": {
+                          "text": "“hProcessSanp”是对“CloseHandle”的输入(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\um\\handleapi.h:39 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 136,
+                            "startColumn": 16
+                          }
+                        },
+                        "message": {
+                          "text": "“hProcessSanp”不应为 NULL，因为这与“CloseHandle”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"Temp_value_#97\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                },
+                "region": {
+                  "startLine": 185,
+                  "startColumn": 23,
+                  "endLine": 185,
+                  "endColumn": 87
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "InjeceByRemoteThread",
+                  "decoratedName": "?InjeceByRemoteThread@@YAXHPEAD@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 185,
+                            "startColumn": 23
+                          }
+                        },
+                        "message": {
+                          "text": "“<符号>”接收来自“GetModuleHandleW”的返回值(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\um\\libloaderapi.h:244 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 177,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 178,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“hp”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 180,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 181,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“mem”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 183,
+                            "startColumn": 35
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“<分支条件>”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 185,
+                            "startColumn": 23
+                          }
+                        },
+                        "message": {
+                          "text": "“<符号>”接收来自“GetModuleHandleW”的返回值(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\um\\libloaderapi.h:244 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 185,
+                            "startColumn": 23
+                          }
+                        },
+                        "message": {
+                          "text": "“Temp_value_#97”不应为 NULL，因为这与“GetProcAddress”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"Temp_value_#157\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                },
+                "region": {
+                  "startLine": 226,
+                  "startColumn": 23,
+                  "endLine": 226,
+                  "endColumn": 87
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "InjeceByNtCreateThread",
+                  "decoratedName": "?InjeceByNtCreateThread@@YAXHPEAD@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 226,
+                            "startColumn": 23
+                          }
+                        },
+                        "message": {
+                          "text": "“<符号>”接收来自“GetModuleHandleW”的返回值(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\um\\libloaderapi.h:244 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 218,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 219,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“hp”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 221,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 222,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“mem”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 224,
+                            "startColumn": 35
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“<分支条件>”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 226,
+                            "startColumn": 23
+                          }
+                        },
+                        "message": {
+                          "text": "“<符号>”接收来自“GetModuleHandleW”的返回值(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\um\\libloaderapi.h:244 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 226,
+                            "startColumn": 23
+                          }
+                        },
+                        "message": {
+                          "text": "“Temp_value_#157”不应为 NULL，因为这与“GetProcAddress”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"Temp_value_#160\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                },
+                "region": {
+                  "startLine": 227,
+                  "startColumn": 37,
+                  "endLine": 227,
+                  "endColumn": 119
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "InjeceByNtCreateThread",
+                  "decoratedName": "?InjeceByNtCreateThread@@YAXHPEAD@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 227,
+                            "startColumn": 37
+                          }
+                        },
+                        "message": {
+                          "text": "“<符号>”接收来自“GetModuleHandleW”的返回值(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\um\\libloaderapi.h:244 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 218,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 219,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“hp”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 221,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 222,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“mem”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 224,
+                            "startColumn": 35
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“<分支条件>”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 226,
+                            "startColumn": 23
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 227,
+                            "startColumn": 37
+                          }
+                        },
+                        "message": {
+                          "text": "“<符号>”接收来自“GetModuleHandleW”的返回值(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\um\\libloaderapi.h:244 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 227,
+                            "startColumn": 37
+                          }
+                        },
+                        "message": {
+                          "text": "“Temp_value_#160”不应为 NULL，因为这与“GetProcAddress”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"Temp_value_#231\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                },
+                "region": {
+                  "startLine": 261,
+                  "startColumn": 23,
+                  "endLine": 261,
+                  "endColumn": 87
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "InjeceByRTLCreateThread",
+                  "decoratedName": "?InjeceByRTLCreateThread@@YAXHPEAD@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 261,
+                            "startColumn": 23
+                          }
+                        },
+                        "message": {
+                          "text": "“<符号>”接收来自“GetModuleHandleW”的返回值(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\um\\libloaderapi.h:244 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 253,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 254,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“hp”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 256,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 257,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“mem”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 259,
+                            "startColumn": 35
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“<分支条件>”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 261,
+                            "startColumn": 23
+                          }
+                        },
+                        "message": {
+                          "text": "“<符号>”接收来自“GetModuleHandleW”的返回值(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\um\\libloaderapi.h:244 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 261,
+                            "startColumn": 23
+                          }
+                        },
+                        "message": {
+                          "text": "“Temp_value_#231”不应为 NULL，因为这与“GetProcAddress”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6387",
+          "message": {
+            "text": "\"Temp_value_#234\" 可以是 \"0\"。"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                },
+                "region": {
+                  "startLine": 262,
+                  "startColumn": 38,
+                  "endLine": 262,
+                  "endColumn": 124
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "InjeceByRTLCreateThread",
+                  "decoratedName": "?InjeceByRTLCreateThread@@YAXHPEAD@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 262,
+                            "startColumn": 38
+                          }
+                        },
+                        "message": {
+                          "text": "“<符号>”接收来自“GetModuleHandleW”的返回值(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\um\\libloaderapi.h:244 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 253,
+                            "startColumn": 12
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 254,
+                            "startColumn": 9
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“hp”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 256,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 257,
+                            "startColumn": 13
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“mem”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 259,
+                            "startColumn": 35
+                          }
+                        },
+                        "message": {
+                          "text": "进入此分支(假定“<分支条件>”)"
+                        }
+                      },
+                      "kinds": [
+                        "branch"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 261,
+                            "startColumn": 23
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 262,
+                            "startColumn": 38
+                          }
+                        },
+                        "message": {
+                          "text": "“<符号>”接收来自“GetModuleHandleW”的返回值(在 c:\\program files (x86)\\windows kits\\10\\include\\10.0.22621.0\\um\\libloaderapi.h:244 处声明)"
+                        }
+                      },
+                      "kinds": [
+                        "declaration"
+                      ],
+                      "importance": "important"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+                          },
+                          "region": {
+                            "startLine": 262,
+                            "startColumn": 38
+                          }
+                        },
+                        "message": {
+                          "text": "“Temp_value_#234”不应为 NULL，因为这与“GetProcAddress”上的 SAL 批注不一致"
+                        }
+                      },
+                      "kinds": [
+                        "usage"
+                      ],
+                      "importance": "essential"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "PREfast Code Analysis",
+          "version": "14.33.31630.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///C:/Users/usher/source/repos/MyInjecter/MyInjecterDlg.cpp"
+          },
+          "roles": [
+            "analysisTarget",
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "8664917aab809109cd5dd11f8d1486ba4d3116bb1fadfa85616911b3e33ea267"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/usher/source/repos/myinjecter/pch.h"
+          },
+          "hashes": {
+            "sha-256": "b47e055c299d484e09e0f356e40b2b71e5922e1ec56a864e9f03f65d5cd70e70"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/usher/source/repos/myinjecter/framework.h"
+          },
+          "hashes": {
+            "sha-256": "0dec0835393a3d579a7400dd6d6acb6b58c1eb2a20f9599d7c82503f21bb3726"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/usher/source/repos/myinjecter/targetver.h"
+          },
+          "hashes": {
+            "sha-256": "04eb68099e73039a3c12bbcf075f6f6b649ec420da4e4593b6c5e6b03d138769"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/usher/source/repos/myinjecter/myinjecter.h"
+          },
+          "hashes": {
+            "sha-256": "5c542158127a13fac87bc289b858e2b5f467d1d79616f6ad6210df718ff78ae9"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/usher/source/repos/myinjecter/resource.h"
+          },
+          "hashes": {
+            "sha-256": "75a3253651e6818a00162d9e4d8fdca52b1cb4cde44804859f6cf9a3076c74d7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/usher/source/repos/myinjecter/myinjecterdlg.h"
+          },
+          "hashes": {
+            "sha-256": "3907269db27878d9e3b7ef2dc2fe7827e0a30e049eb20a0946e6f8c071bbb0e2"
+          }
+        }
+      ]
+    }
+  ]
+}
