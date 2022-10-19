@@ -20,6 +20,8 @@ public:
 	protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV 支持
 
+	
+
 
 // 实现
 protected:
@@ -35,7 +37,10 @@ public:
 	CListCtrl m_list;
 	afx_msg void OnBnClickedButton2();
 
-	
+	//virtual void OnClose();
+	virtual void OnOK();
+	virtual void OnCancel() ;
+	afx_msg void OnClose();
 };
 
 

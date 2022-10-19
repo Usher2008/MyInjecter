@@ -38,15 +38,34 @@ BEGIN_MESSAGE_MAP(CMyInjecterDlg, CDialogEx)
     ON_BN_CLICKED(IDC_BUTTON4, &CMyInjecterDlg::OnBnClickedButton2)
     ON_BN_CLICKED(IDC_BUTTON5, &CMyInjecterDlg::OnBnClickedButton2)
     ON_BN_CLICKED(IDC_BUTTON6, &CMyInjecterDlg::OnBnClickedButton2)
+    ON_WM_CLOSE()
 END_MESSAGE_MAP()
 
 
-// CMyInjecterDlg 消息处理程序
+
+
+void CMyInjecterDlg::OnClose()
+{
+    // TODO: 在此添加消息处理程序代码和/或调用默认值
+    EndDialog(IDCANCEL);
+    CDialogEx::OnClose();
+}
+
+
+
+void CMyInjecterDlg::OnOK()//啥也不做就OK了
+{
+
+}
+
+void CMyInjecterDlg::OnCancel()//同上
+{
+    
+}
 
 BOOL CMyInjecterDlg::OnInitDialog()
 {
     CDialogEx::OnInitDialog();
-
     // 设置此对话框的图标。  当应用程序主窗口不是对话框时，框架将自动
     //  执行此操作
     SetIcon(m_hIcon, TRUE);			// 设置大图标
@@ -438,5 +457,7 @@ void InjeceByRobThread(int pid, char* path)
     return;
 
 }
+
+
 
 
