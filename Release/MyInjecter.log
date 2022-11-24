@@ -1,0 +1,6 @@
+﻿  MyInjecter.cpp
+  MyInjecterDlg.cpp
+C:\Users\usher\source\repos\MyInjecter\MyInjecterDlg.cpp(439,57): error C2039: "Rip": 不是 "_CONTEXT" 的成员
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winnt.h(8236,35): message : 参见“_CONTEXT”的声明
+C:\Users\usher\source\repos\MyInjecter\MyInjecterDlg.cpp(445,29): error C2039: "Rip": 不是 "_CONTEXT" 的成员
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\um\winnt.h(8236,35): message : 参见“_CONTEXT”的声明

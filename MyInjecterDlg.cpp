@@ -74,11 +74,12 @@ BOOL CMyInjecterDlg::OnInitDialog()
     // TODO: 在此添加额外的初始化代码
     CRect rect;
     m_list.GetClientRect(&rect);
-    int one = rect.Width() / 9;
+    int one = rect.Width() / 10;
     
     m_list.InsertColumn(0, TEXT("Index"), LVCFMT_LEFT, one);
     m_list.InsertColumn(1, TEXT("PID"), LVCFMT_LEFT, one * 2);
-    m_list.InsertColumn(2, TEXT("ProcessName"), LVCFMT_LEFT, one * 6);
+    m_list.InsertColumn(2, TEXT("Arc"), LVCFMT_LEFT, one);
+    m_list.InsertColumn(3, TEXT("ProcessName"), LVCFMT_LEFT, one * 6);
 
     return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
@@ -149,7 +150,14 @@ void CMyInjecterDlg::OnBnClickedButton1()
         strTEMP.Format(L"%d/0x%x", pe32.th32ProcessID, pe32.th32ProcessID);
         m_list.SetItemText(ItemIndex, 1, strTEMP);//pid
 
-        m_list.SetItemText(ItemIndex, 2, pe32.szExeFile);//FileName
+        int a;
+        HANDLE hpid = OpenProcess(PROCESS_QUERY_INFORMATION, FALSE, pe32.th32ProcessID);
+        IsWow64Process(hpid, &a);
+        CloseHandle(hpid);
+        strTEMP.Format(L"x%d", a ? 32 : 64);
+        m_list.SetItemText(ItemIndex, 2, strTEMP);//Arc
+
+        m_list.SetItemText(ItemIndex, 3, pe32.szExeFile);//FileName
 
         bMore = Process32Next(hProcessSanp, &pe32);
         ItemIndex++;
@@ -158,12 +166,13 @@ void CMyInjecterDlg::OnBnClickedButton1()
 
 }
 
-
+int g_CurArc;
 void CMyInjecterDlg::OnBnClickedButton2()
 {
 
     int mark = m_list.GetSelectionMark();
     int pid = _ttoi(m_list.GetItemText(mark, 1));
+    g_CurArc = m_list.GetItemText(mark, 2).Compare(L"x86");
     if (!pid)
     {
         MessageBox(L"PID Error!");
@@ -210,6 +219,10 @@ void InjeceByRemoteThread(int pid, char* path)
             if (WriteProcessMemory(hp, mem, path, strlen(path), 0))
             {
                 PVOID LoadLibraryABase = GetProcAddress(GetModuleHandle(L"kernel32"), "LoadLibraryA");
+                if (g_CurArc)
+                {
+                    LoadLibraryABase = (LPTHREAD_START_ROUTINE)system("loadLibrary_x86_address.exe");
+                }
                 HANDLE tid = CreateRemoteThread(hp, 0, 0, (LPTHREAD_START_ROUTINE)LoadLibraryABase, mem, 0, 0);
                 if (tid)
                 {
