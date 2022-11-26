@@ -186,14 +186,14 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h" />
+    <ClInclude Include="CDialog2.h" />
     <ClInclude Include="MyInjecter.h" />
     <ClInclude Include="MyInjecterDlg.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CDialog2.cpp" />
     <ClCompile Include="MyInjecter.cpp" />
     <ClCompile Include="MyInjecterDlg.cpp" />
   </ItemGroup>

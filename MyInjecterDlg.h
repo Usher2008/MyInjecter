@@ -1,9 +1,5 @@
-﻿
-// MyInjecterDlg.h: 头文件
-//
-
-#pragma once
-
+﻿#pragma once
+#include "pch.h"
 
 // CMyInjecterDlg 对话框
 class CMyInjecterDlg : public CDialogEx
@@ -41,6 +37,17 @@ public:
 	virtual void OnOK();
 	virtual void OnCancel() ;
 	afx_msg void OnClose();
+//	afx_msg void OnDropFiles(HDROP hDropInfo);
+	afx_msg void OnDropFiles(HDROP hDropInfo);
+//	afx_msg void OnEnChangeMfceditbrowse1();
+	CMFCEditBrowseCtrl m_edit;
+	afx_msg void OnNMRClickList3(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnHdnItemclickList3(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnLvnColumnclickList3(NMHDR* pNMHDR, LRESULT* pResult);
+//	afx_msg void OnNMSetfocusList3(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnNMClickList3(NMHDR* pNMHDR, LRESULT* pResult);
+//	afx_msg void OnLvnOdcachehintList3(NMHDR* pNMHDR, LRESULT* pResult);
+	afx_msg void OnLvnItemchangedList3(NMHDR* pNMHDR, LRESULT* pResult);
 };
 
 
@@ -77,3 +84,5 @@ typedef DWORD(WINAPI* pRtlCreateUserThread)(    //函数原型
 void InjeceByRTLCreateThread(int pid, char* path);
 void InjeceByAPC(int pid, char* path);
 void InjeceByRobThread(int pid, char* path);
+extern int g_pid;
+extern CString g_PName;

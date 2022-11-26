@@ -1,12 +1,5 @@
-﻿
-// MyInjecterDlg.cpp: 实现文件
-//
+﻿#include "pch.h"
 
-#include "pch.h"
-#include "framework.h"
-#include "MyInjecter.h"
-#include "MyInjecterDlg.h"
-#include "afxdialogex.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -14,8 +7,6 @@
 
 
 // CMyInjecterDlg 对话框
-
-
 
 CMyInjecterDlg::CMyInjecterDlg(CWnd* pParent /*=nullptr*/)
     : CDialogEx(IDD_MYINJECTER_DIALOG, pParent)
@@ -27,6 +18,7 @@ void CMyInjecterDlg::DoDataExchange(CDataExchange* pDX)
 {
     CDialogEx::DoDataExchange(pDX);
     DDX_Control(pDX, IDC_LIST3, m_list);
+    DDX_Control(pDX, IDC_MFCEDITBROWSE1, m_edit);
 }
 
 BEGIN_MESSAGE_MAP(CMyInjecterDlg, CDialogEx)
@@ -39,6 +31,17 @@ BEGIN_MESSAGE_MAP(CMyInjecterDlg, CDialogEx)
     ON_BN_CLICKED(IDC_BUTTON5, &CMyInjecterDlg::OnBnClickedButton2)
     ON_BN_CLICKED(IDC_BUTTON6, &CMyInjecterDlg::OnBnClickedButton2)
     ON_WM_CLOSE()
+//    ON_WM_DROPFILES()
+ON_WM_DROPFILES()
+//ON_EN_CHANGE(IDC_MFCEDITBROWSE1, &CMyInjecterDlg::OnEnChangeMfceditbrowse1)
+ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST3, &CMyInjecterDlg::OnLvnItemchangedList3)
+ON_NOTIFY(NM_RCLICK, IDC_LIST3, &CMyInjecterDlg::OnNMRClickList3)
+//ON_NOTIFY(HDN_ITEMCLICK, 0, &CMyInjecterDlg::OnHdnItemclickList3)
+//ON_NOTIFY(LVN_COLUMNCLICK, IDC_LIST3, &CMyInjecterDlg::OnLvnColumnclickList3)
+//ON_NOTIFY(NM_SETFOCUS, IDC_LIST3, &CMyInjecterDlg::OnNMSetfocusList3)
+//ON_NOTIFY(NM_CLICK, IDC_LIST3, &CMyInjecterDlg::OnNMClickList3)
+//ON_NOTIFY(LVN_ODCACHEHINT, IDC_LIST3, &CMyInjecterDlg::OnLvnOdcachehintList3)
+
 END_MESSAGE_MAP()
 
 
@@ -167,13 +170,10 @@ void CMyInjecterDlg::OnBnClickedButton1()
 }
 
 int g_CurArc;
+int g_pid = 0;
 void CMyInjecterDlg::OnBnClickedButton2()
 {
-
-    int mark = m_list.GetSelectionMark();
-    int pid = _ttoi(m_list.GetItemText(mark, 1));
-    g_CurArc = m_list.GetItemText(mark, 2).Compare(L"x86");
-    if (!pid)
+    if (!g_pid)
     {
         MessageBox(L"PID Error!");
         return;
@@ -189,19 +189,19 @@ void CMyInjecterDlg::OnBnClickedButton2()
     switch (clickID)
     {
         case IDC_BUTTON2:
-            InjeceByRemoteThread(pid, dllpath);
+            InjeceByRemoteThread(g_pid, dllpath);
             break;	
         case IDC_BUTTON3:
-            InjeceByNtCreateThread(pid, dllpath);
+            InjeceByNtCreateThread(g_pid, dllpath);
             break;
         case IDC_BUTTON4:
-            InjeceByRTLCreateThread(pid, dllpath);
+            InjeceByRTLCreateThread(g_pid, dllpath);
             break;
         case IDC_BUTTON5:
-            InjeceByAPC(pid, dllpath);
+            InjeceByAPC(g_pid, dllpath);
             break;
         case IDC_BUTTON6:
-            InjeceByRobThread(pid, dllpath);
+            InjeceByRobThread(g_pid, dllpath);
             break;
     }
 
@@ -471,6 +471,97 @@ void InjeceByRobThread(int pid, char* path)
 
 }
 
+void CMyInjecterDlg::OnDropFiles(HDROP hDropInfo)
+{
+    // TODO: 在此添加消息处理程序代码和/或调用默认值
+    WORD wNumFileDropped = DragQueryFile(hDropInfo, -1, NULL, 0);
+
+    CString firstFile = L"";
+
+    for (WORD x = 0; x < wNumFileDropped; x++) {
+        WORD wPathnameSize = DragQueryFileA(hDropInfo, x, NULL, 0);
+        char* npszFile = (char*)LocalAlloc(LPTR, wPathnameSize += 1);
+
+        if (npszFile == NULL) {
+            continue;
+        }
+
+        DragQueryFileA(hDropInfo, x, npszFile, wPathnameSize);
+        if (firstFile == "") {
+            firstFile = npszFile;
+        }
+
+        LocalFree(npszFile);
+
+    }
 
 
+    DragFinish(hDropInfo);
 
+    m_edit.SetWindowTextW(firstFile);
+    UpdateData(FALSE);
+    CDialogEx::OnDropFiles(hDropInfo);
+}
+
+void ProcessMoudle()
+{
+    if (g_pid != 0)
+    {
+        CDialog2* dlg;
+        dlg = new CDialog2();
+        dlg->DoModal();
+    }
+    return;
+    //CRect rc;
+    //GetClientRect(m_hwnd,&rc);
+    //dlg->Create(IDD_MODULE_DIALOG);
+    //dlg->MoveWindow(&rc);
+    //dlg->ShowWindow(sw_show);
+    
+}
+
+void CMyInjecterDlg::OnNMRClickList3(NMHDR* pNMHDR, LRESULT* pResult)
+{
+    LPNMITEMACTIVATE pNMItemActivate = reinterpret_cast<LPNMITEMACTIVATE>(pNMHDR);
+    // TODO: 在此添加控件通知处理程序代码
+    int mark = m_list.GetSelectionMark();
+    g_CurArc = m_list.GetItemText(mark, 2).Compare(L"x86");
+    g_pid = _ttoi(m_list.GetItemText(mark, 1));
+    g_PName = m_list.GetItemText(mark, 3);
+    HMENU hMenu = ::CreatePopupMenu();
+    HMENU hMenu2 = ::CreatePopupMenu();
+    AppendMenu(hMenu, MF_STRING, 10001, _T("遍历模块"));
+    AppendMenu(hMenu, MF_STRING, 10002, _T("菜单项2"));
+    AppendMenu(hMenu2, MF_STRING, 10003, _T("菜单项1"));
+    AppendMenu(hMenu2, MF_STRING, 10004, _T("菜单项1"));
+    AppendMenu(hMenu, MF_POPUP, (LONG)hMenu2, _T("子菜单2"));
+    
+    
+    CPoint pt;
+    
+    GetCursorPos(&pt);
+    //获得当前鼠标位置
+
+    UINT Cmd = (UINT)::TrackPopupMenu(hMenu, TPM_LEFTALIGN | TPM_RETURNCMD, pt.x, pt.y, 0, m_hWnd, NULL);
+    //弹出菜单
+
+    switch(Cmd)//响应点击的菜单
+    {
+        case 10001:
+            ProcessMoudle();
+            break;
+    }
+
+    *pResult = 0;
+}
+CString g_PName = {};
+void CMyInjecterDlg::OnLvnItemchangedList3(NMHDR* pNMHDR, LRESULT* pResult)
+{
+    LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+    // TODO: 在此添加控件通知处理程序代码
+    int mark = m_list.GetSelectionMark();
+    g_CurArc = m_list.GetItemText(mark, 2).Compare(L"x86");
+    g_pid = _ttoi(m_list.GetItemText(mark, 1));
+    g_PName = m_list.GetItemText(mark, 3);
+    *pResult = 0;
+}

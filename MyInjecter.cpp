@@ -1,11 +1,5 @@
-﻿
-// MyInjecter.cpp: 定义应用程序的类行为。
-//
+﻿#include "pch.h"
 
-#include "pch.h"
-#include "framework.h"
-#include "MyInjecter.h"
-#include "MyInjecterDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
